@@ -4,30 +4,12 @@
   <title>Resident Evil 2</title>
   <style>
     body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: #000; overflow: hidden; }
-    #wrapper { position: relative; width: 100%; height: 100%; }
     #game { width: 100%; height: 100%; }
-    #fs-btn {
-      position: absolute; top: 10px; right: 10px; z-index: 9999;
-      padding: 8px 14px; background: rgba(0, 100, 255, 0.85); color: #fff;
-      border: none; border-radius: 5px; cursor: pointer; font-family: sans-serif; font-size: 14px;
-    }
-    #fs-btn:hover { background: #0064ff; }
   </style>
 </head>
 <body>
-  <div id="wrapper">
-    <button id="fs-btn" onclick="toggleFullscreen()">Fullscreen</button>
-    <div id="game"></div>
-  </div>
+  <div id="game"></div>
   <script>
-    function toggleFullscreen() {
-      const el = document.getElementById("wrapper");
-      if (!document.fullscreenElement) {
-        (el.requestFullscreen || el.webkitRequestFullscreen || el.msRequestFullscreen).call(el);
-      } else {
-        (document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen).call(document);
-      }
-    }
     EJS_player = "#game";
     EJS_core = "psx";
     EJS_gameName = "Resident Evil 2";
